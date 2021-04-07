@@ -8,11 +8,15 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
     public float airRotationSpeed;
     public float canonRotationSpeed;
+    public float rocketJumpForce;
+    public float bulletForce;
 
-    [Header ("Unity Setup")]
+    [Header("Unity Setup")]
+    public GameObject bulletPrefab;
     public Rigidbody2D playerRb;
     public Transform jumpDirection;
     public Transform canonJumpDirection;
+    public Transform firePoint;
     public Transform partToRotate;
     public LayerMask groundLayer;
 
@@ -29,22 +33,24 @@ public class PlayerController : MonoBehaviour
     private float horizontalRight;
     private float verticalRight;
 
-
     private RaycastHit2D hit;
     private int rayTouchIndex;
 
     void FixedUpdate()
     {
+        #region Axis
         horizontaleAxe = Input.GetAxis("Horizontal");
         verticalAxe = Input.GetAxis("Vertical");
 
         horizontalRight = Input.GetAxis("Joystick Right Horizontal");
         verticalRight = Input.GetAxis("Joystick Right Vertical");
+        #endregion
 
         Jump();
         Movement();
         AirVerification();
         AimCanon();
+        Fire();
     }
 
     void Jump()
@@ -73,7 +79,6 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-  
     void AirVerification()
     {
         for (int i = 0; i < rayStarts.Length; i++)
@@ -92,7 +97,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (rayTouchIndex == rayStarts.Length)
+        if (rayTouchIndex > 0)
         {
             inTheAir = false;
         }
@@ -103,7 +108,6 @@ public class PlayerController : MonoBehaviour
 
         rayTouchIndex = 0;
     }
-
     void AimCanon()
     {
         if (!inTheAir)
@@ -121,6 +125,24 @@ public class PlayerController : MonoBehaviour
         {
             Vector3 lerpRotation = Quaternion.Lerp(partToRotate.rotation, canonJumpDirection.rotation, Time.deltaTime * 7f).eulerAngles;
             partToRotate.rotation = Quaternion.Euler(lerpRotation);
+        }
+    }
+
+    void Fire()
+    {
+        if (Input.GetButtonDown("Shoot"))
+        {
+            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            bullet.GetComponent<Rigidbody2D>().AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+
+            if (!inTheAir)
+            {
+            }
+            else
+            {
+                Vector2 direction = (firePoint.position - transform.position).normalized;
+                playerRb.AddForce(-direction * rocketJumpForce);
+            }
         }
     }
 }

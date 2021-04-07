@@ -152,6 +152,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8391829218553524693}
+  - {fileID: 1733468051890319166}
   m_Father: {fileID: 2548486773104534780}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 20}
@@ -266,6 +267,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &5742108519422881774
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1733468051890319166}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1733468051890319166
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5742108519422881774}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.313, y: 0.082, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1306856531978924677}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7597859561354732615
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,7 +402,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 0
@@ -391,9 +422,14 @@ MonoBehaviour:
   jumpForce: 700
   airRotationSpeed: 6
   canonRotationSpeed: 3
+  rocketJumpForce: 1000
+  bulletForce: 500
+  bulletPrefab: {fileID: 7259900112626086296, guid: 8e634eeb899373b4cb5a5d9595da1afb,
+    type: 3}
   playerRb: {fileID: 1641894505743413605}
   jumpDirection: {fileID: 5716436461337933996}
   canonJumpDirection: {fileID: 3051237814437028395}
+  firePoint: {fileID: 1733468051890319166}
   partToRotate: {fileID: 1306856531978924677}
   groundLayer:
     serializedVersion: 2
@@ -404,10 +440,6 @@ MonoBehaviour:
   - {fileID: 8595572403093418282}
   - {fileID: 6305167449815945786}
   inTheAir: 0
-  horizontaleAxe: 0
-  verticalAxe: 0
-  horizontalRight: 0
-  verticalRight: 0
 --- !u!1 &8236849347594978644
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,7 +511,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8351123262727661450}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 1.27, z: 0}
+  m_LocalPosition: {x: 0, y: 1.74, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2548486773104534780}
