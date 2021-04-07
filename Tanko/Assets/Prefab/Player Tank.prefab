@@ -147,7 +147,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4782666349357884577}
-  m_LocalRotation: {x: 0, y: 0, z: 0.17364816, w: 0.9848078}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.77, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -155,7 +155,7 @@ Transform:
   - {fileID: 1733468051890319166}
   m_Father: {fileID: 2548486773104534780}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 20}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5538129631603376561
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,13 +290,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5742108519422881774}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 2.313, y: 0.082, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1306856531978924677}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!1 &7597859561354732615
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,7 +397,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -418,12 +418,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2484e05c2c8b854e8e323781b021946, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2000
-  jumpForce: 700
+  speed: 1000
+  jumpForce: 400
   airRotationSpeed: 6
   canonRotationSpeed: 3
-  rocketJumpForce: 1000
-  bulletForce: 500
+  rocketJumpForce: 400
+  bulletForce: 15
   bulletPrefab: {fileID: 7259900112626086296, guid: 8e634eeb899373b4cb5a5d9595da1afb,
     type: 3}
   playerRb: {fileID: 1641894505743413605}
