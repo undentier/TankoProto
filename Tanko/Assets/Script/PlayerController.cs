@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     [Header ("Unity Setup")]
     public Rigidbody2D playerRb;
     public Transform jumpDirection;
+    public Transform canonJumpDirection;
     public Transform partToRotate;
     public LayerMask groundLayer;
 
@@ -21,13 +22,12 @@ public class PlayerController : MonoBehaviour
 
     [Header("Info")]
     public bool inTheAir;
-    [SerializeField]
+
     private float horizontaleAxe;
-    [SerializeField]
     private float verticalAxe;
-    [Space]
-    public float horizontalRight;
-    public float verticalRight;
+
+    private float horizontalRight;
+    private float verticalRight;
 
 
     private RaycastHit2D hit;
@@ -116,6 +116,11 @@ public class PlayerController : MonoBehaviour
             {
                 partToRotate.eulerAngles += Vector3.forward * canonRotationSpeed;
             }
+        }
+        else
+        {
+            Vector3 lerpRotation = Quaternion.Lerp(partToRotate.rotation, canonJumpDirection.rotation, Time.deltaTime * 7f).eulerAngles;
+            partToRotate.rotation = Quaternion.Euler(lerpRotation);
         }
     }
 }

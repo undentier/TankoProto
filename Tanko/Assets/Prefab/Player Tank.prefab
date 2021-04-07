@@ -300,6 +300,7 @@ Transform:
   - {fileID: 4843055794862264189}
   - {fileID: 7039976260986128376}
   - {fileID: 5716436461337933996}
+  - {fileID: 3051237814437028395}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -392,6 +393,7 @@ MonoBehaviour:
   canonRotationSpeed: 3
   playerRb: {fileID: 1641894505743413605}
   jumpDirection: {fileID: 5716436461337933996}
+  canonJumpDirection: {fileID: 3051237814437028395}
   partToRotate: {fileID: 1306856531978924677}
   groundLayer:
     serializedVersion: 2
@@ -453,6 +455,36 @@ CapsuleCollider2D:
   m_Offset: {x: -0.04845982, y: -0.40203518}
   m_Size: {x: 3.9628446, y: 1.7742604}
   m_Direction: 1
+--- !u!1 &8351123262727661450
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3051237814437028395}
+  m_Layer: 0
+  m_Name: CanonJumpDirection
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3051237814437028395
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8351123262727661450}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 1.27, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2548486773104534780}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &8614941710932879796
 GameObject:
   m_ObjectHideFlags: 0
