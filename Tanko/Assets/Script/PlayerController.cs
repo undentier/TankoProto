@@ -6,17 +6,18 @@ public class PlayerController : MonoBehaviour
 {
     public float speed;
     public float jumpForce;
-    public float rotationSpeed;
+    public float airRotationSpeed;
+    public float canonRotationSpeed;
 
     [Header ("Unity Setup")]
     public Rigidbody2D playerRb;
     public Transform jumpDirection;
+    public Transform partToRotate;
     public LayerMask groundLayer;
 
     [Header("Raycast info")]
     public float rayDistance;
-    public Transform leftStartRaycast;
-    public Transform rightStartRaycast;
+    public Transform[] rayStarts;
 
     [Header("Info")]
     public bool inTheAir;
@@ -24,16 +25,26 @@ public class PlayerController : MonoBehaviour
     private float horizontaleAxe;
     [SerializeField]
     private float verticalAxe;
+    [Space]
+    public float horizontalRight;
+    public float verticalRight;
+
+
     private RaycastHit2D hit;
+    private int rayTouchIndex;
 
     void FixedUpdate()
     {
         horizontaleAxe = Input.GetAxis("Horizontal");
         verticalAxe = Input.GetAxis("Vertical");
 
-        Movement();
+        horizontalRight = Input.GetAxis("Joystick Right Horizontal");
+        verticalRight = Input.GetAxis("Joystick Right Vertical");
+
         Jump();
+        Movement();
         AirVerification();
+        AimCanon();
     }
 
     void Jump()
@@ -54,26 +65,57 @@ public class PlayerController : MonoBehaviour
         {
             if (horizontaleAxe > 0.1f)
             {
-                playerRb.rotation -= rotationSpeed;
+                playerRb.rotation -= airRotationSpeed;
             }
             else if (horizontaleAxe < -0.1f)
             {
-                playerRb.rotation += rotationSpeed;
+                playerRb.rotation += airRotationSpeed;
             }
         }
     }
   
     void AirVerification()
     {
-        hit = Physics2D.Raycast(leftStartRaycast.position, leftStartRaycast.up, rayDistance, groundLayer);
+        for (int i = 0; i < rayStarts.Length; i++)
+        {
+            hit = Physics2D.Raycast(rayStarts[i].position, rayStarts[i].up, rayDistance, groundLayer);
 
-        if (hit.collider != null) // Si on touche
+            if (hit.collider != null)
+            {
+                rayTouchIndex += 1;
+
+                Debug.DrawRay(rayStarts[i].position, rayStarts[i].up * rayDistance, Color.green);
+            }
+            else
+            {
+                Debug.DrawRay(rayStarts[i].position, rayStarts[i].up * rayDistance, Color.red);
+            }
+        }
+
+        if (rayTouchIndex == rayStarts.Length)
         {
             inTheAir = false;
         }
         else
         {
             inTheAir = true;
+        }
+
+        rayTouchIndex = 0;
+    }
+
+    void AimCanon()
+    {
+        if (!inTheAir)
+        {
+            if (horizontalRight > 0.1f && partToRotate.localEulerAngles.z > 5f) 
+            {
+                partToRotate.eulerAngles -= Vector3.forward * canonRotationSpeed;
+            }
+            else if (horizontalRight < -0.1f && partToRotate.localEulerAngles.z < 178f)
+            {
+                partToRotate.eulerAngles += Vector3.forward * canonRotationSpeed;
+            }
         }
     }
 }
