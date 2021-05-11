@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
     private RaycastHit2D hit;
     private int rayTouchIndex;
 
-    void FixedUpdate()
+    void Update()
     {
         #region Axis
         horizontaleAxe = Input.GetAxis("Horizontal");

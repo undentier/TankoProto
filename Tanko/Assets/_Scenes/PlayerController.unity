@@ -677,6 +677,28 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 663412796, guid: 72b68e71f80730a48a98dc8921e9f8e5, type: 3}
+      propertyPath: rayDistance
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 663412796, guid: 72b68e71f80730a48a98dc8921e9f8e5, type: 3}
+      propertyPath: airRotationSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 663412796, guid: 72b68e71f80730a48a98dc8921e9f8e5, type: 3}
+      propertyPath: canonRotationSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1641894505743413605, guid: 72b68e71f80730a48a98dc8921e9f8e5,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 0eb740c96e08a954db4a123fe7b9ce91, type: 2}
+    - target: {fileID: 1641894505743413605, guid: 72b68e71f80730a48a98dc8921e9f8e5,
+        type: 3}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2548486773104534780, guid: 72b68e71f80730a48a98dc8921e9f8e5,
         type: 3}
       propertyPath: m_RootOrder
