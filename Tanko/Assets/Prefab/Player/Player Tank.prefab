@@ -692,7 +692,7 @@ MonoBehaviour:
   - {fileID: 4549205270132475668}
   - {fileID: 5766541260324666526}
   - {fileID: 2808823637704271764}
-  deathParticule: {fileID: 2641567712131375353, guid: 066d431a6ec40144aa1aa524941dc5fc,
+  deathParticule: {fileID: 8807918602595781744, guid: 066d431a6ec40144aa1aa524941dc5fc,
     type: 3}
   inTheAir: 0
   actualBullet: 0
