@@ -30,13 +30,15 @@ public class PlayerController : MonoBehaviour
     [Header("Ui setup")]
     public Sprite ammoFill;
     public Sprite ammoEmpty;
-
+    [Space]
     public SpriteRenderer[] ammoSprites;
 
+    [Header("FeedBack")]
+    public GameObject deathParticule;
 
     [Header("Info")]
     public bool inTheAir;
-    public int actualBullet;
+    [HideInInspector] public int actualBullet;
     private float reloadTimer;
 
     private float horizontaleAxe;
@@ -92,12 +94,10 @@ public class PlayerController : MonoBehaviour
             if (horizontaleAxe > 0.1f)
             {
                 playerRb.MoveRotation(playerRb.rotation - airRotationSpeed);
-                //playerRb.rotation -= airRotationSpeed;
             }
             else if (horizontaleAxe < -0.1f)
             {
                 playerRb.MoveRotation(playerRb.rotation + airRotationSpeed);
-                //playerRb.rotation += airRotationSpeed;
             }
         }
     }
@@ -222,6 +222,8 @@ public class PlayerController : MonoBehaviour
 
     public void PlayerDeath()
     {
+        GameObject actualDeathParticule = Instantiate(deathParticule, transform.position, transform.rotation);
+        Destroy(actualDeathParticule, 5f);
         Destroy(gameObject);
     }
 }
