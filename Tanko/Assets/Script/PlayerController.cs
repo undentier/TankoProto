@@ -91,11 +91,13 @@ public class PlayerController : MonoBehaviour
         {
             if (horizontaleAxe > 0.1f)
             {
-                playerRb.rotation -= airRotationSpeed;
+                playerRb.MoveRotation(playerRb.rotation - airRotationSpeed);
+                //playerRb.rotation -= airRotationSpeed;
             }
             else if (horizontaleAxe < -0.1f)
             {
-                playerRb.rotation += airRotationSpeed;
+                playerRb.MoveRotation(playerRb.rotation + airRotationSpeed);
+                //playerRb.rotation += airRotationSpeed;
             }
         }
     }
@@ -216,5 +218,10 @@ public class PlayerController : MonoBehaviour
                 ammoSprites[i].sprite = ammoFill;
             }
         }
+    }
+
+    public void PlayerDeath()
+    {
+        Destroy(gameObject);
     }
 }

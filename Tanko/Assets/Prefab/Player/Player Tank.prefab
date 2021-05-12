@@ -552,9 +552,10 @@ GameObject:
   - component: {fileID: 6383025536019951649}
   - component: {fileID: 1641894505743413605}
   - component: {fileID: 663412796}
+  - component: {fileID: 4604369328168764960}
   m_Layer: 0
   m_Name: Player Tank
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -664,7 +665,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1000
   jumpForce: 400
-  airRotationSpeed: 2
+  airRotationSpeed: 5
   canonRotationSpeed: 1
   rocketJumpForce: 400
   bulletForce: 15
@@ -693,6 +694,19 @@ MonoBehaviour:
   - {fileID: 2808823637704271764}
   inTheAir: 0
   actualBullet: 0
+--- !u!114 &4604369328168764960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7597859561354732615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 183eb4c1ab847b247a3e488e8d5dbb43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerController: {fileID: 663412796}
 --- !u!1 &8236849347594978644
 GameObject:
   m_ObjectHideFlags: 0
