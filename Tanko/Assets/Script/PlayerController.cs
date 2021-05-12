@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header ("Player stats")]
     public float speed;
     public float jumpForce;
     public float airRotationSpeed;
     public float canonRotationSpeed;
     public float rocketJumpForce;
     public float bulletForce;
+    public int maxBullet;
+    public float reloadCooldown;
 
     [Header("Unity Setup")]
     public GameObject bulletPrefab;
@@ -24,8 +27,17 @@ public class PlayerController : MonoBehaviour
     public float rayDistance;
     public Transform[] rayStarts;
 
+    [Header("Ui setup")]
+    public Sprite ammoFill;
+    public Sprite ammoEmpty;
+
+    public SpriteRenderer[] ammoSprites;
+
+
     [Header("Info")]
     public bool inTheAir;
+    public int actualBullet;
+    private float reloadTimer;
 
     private float horizontaleAxe;
     private float verticalAxe;
@@ -35,6 +47,12 @@ public class PlayerController : MonoBehaviour
 
     private RaycastHit2D hit;
     private int rayTouchIndex;
+
+    private void Start()
+    {
+        actualBullet = maxBullet;
+        reloadTimer = reloadCooldown;
+    }
 
     void Update()
     {
@@ -51,6 +69,8 @@ public class PlayerController : MonoBehaviour
         AirVerification();
         AimCanon();
         Fire();
+        GetBullet();
+        UiAmmoSysteme();
     }
 
     void Jump()
@@ -132,16 +152,68 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetButtonDown("Shoot"))
         {
-            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-            bullet.GetComponent<Rigidbody2D>().AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
-
-            if (!inTheAir)
+            if (actualBullet > 0)
             {
+                GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+                bullet.GetComponent<Rigidbody2D>().AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+
+                if (!inTheAir)
+                {
+                }
+                else
+                {
+                    Vector2 direction = (firePoint.position - transform.position).normalized;
+                    playerRb.AddForce(-direction * rocketJumpForce);
+                }
+
+                DeletBullet(1);
+            }
+        }
+    }
+
+    void DeletBullet(int number)
+    {
+        if (actualBullet > 0)
+        {
+            actualBullet -= number;
+        }
+    }
+    void AddBullet(int number)
+    {
+        if (actualBullet < maxBullet)
+        {
+            actualBullet += number;
+        }
+    }
+
+    void GetBullet()
+    {
+        if (actualBullet < maxBullet)
+        {
+            if (reloadTimer <= 0)
+            {
+                AddBullet(1);
+                reloadTimer = reloadCooldown;
             }
             else
             {
-                Vector2 direction = (firePoint.position - transform.position).normalized;
-                playerRb.AddForce(-direction * rocketJumpForce);
+                reloadTimer -= Time.deltaTime;
+            }
+        }
+    }
+
+
+    void UiAmmoSysteme()
+    {
+        for (int i = 0; i < ammoSprites.Length; i++)
+        {
+            if (i >= actualBullet)
+            {
+                ammoSprites[i].sprite = ammoEmpty;
+            }
+            else
+            {
+                ammoSprites[i].sprite = ammoFill;
             }
         }
     }
