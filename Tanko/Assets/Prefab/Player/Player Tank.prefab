@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6487381308315401899}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LeftStartRaycast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 302341828334564390}
   - component: {fileID: 5766541260324666526}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Ui ammo (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7039976260986128376}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: RaycastStart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,37 +142,6 @@ Transform:
   - {fileID: 8595572403093418282}
   - {fileID: 6305167449815945786}
   m_Father: {fileID: 2548486773104534780}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2473227293644331875
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4843055794862264189}
-  m_Layer: 0
-  m_Name: HitBox
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4843055794862264189
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2473227293644331875}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 5792746904633302621}
-  m_Father: {fileID: 2548486773104534780}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3010375654863107856
@@ -185,7 +154,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7552895637301328340}
   - component: {fileID: 4549205270132475668}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Ui ammo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,7 +234,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6305167449815945786}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: RightStartRaycast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -295,7 +264,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1306856531978924677}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PartToRotate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -327,7 +296,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8595572403093418282}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MiddleRaycast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -358,7 +327,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8391829218553524693}
   - component: {fileID: 3153853981726772935}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Canon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -439,7 +408,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4988349426328359597}
   - component: {fileID: 2808823637704271764}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Ui ammo (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -519,7 +488,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1733468051890319166}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -553,7 +522,8 @@ GameObject:
   - component: {fileID: 1641894505743413605}
   - component: {fileID: 663412796}
   - component: {fileID: 4604369328168764960}
-  m_Layer: 0
+  - component: {fileID: 672972342}
+  m_Layer: 11
   m_Name: Player Tank
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -572,7 +542,6 @@ Transform:
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children:
   - {fileID: 1306856531978924677}
-  - {fileID: 4843055794862264189}
   - {fileID: 7039976260986128376}
   - {fileID: 5716436461337933996}
   - {fileID: 3051237814437028395}
@@ -680,7 +649,7 @@ MonoBehaviour:
   partToRotate: {fileID: 1306856531978924677}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 257
   rayDistance: 0.1
   rayStarts:
   - {fileID: 6487381308315401899}
@@ -709,44 +678,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 663412796}
---- !u!1 &8236849347594978644
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5792746904633302621}
-  - component: {fileID: 4466895078379857764}
-  m_Layer: 0
-  m_Name: Wheel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5792746904633302621
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8236849347594978644}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4843055794862264189}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &4466895078379857764
+--- !u!70 &672972342
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8236849347594978644}
+  m_GameObject: {fileID: 7597859561354732615}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -765,7 +703,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3051237814437028395}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CanonJumpDirection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -784,7 +722,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2548486773104534780}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &8452134955552129778
 GameObject:
@@ -795,7 +733,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 920730086312107502}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: AmmoUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -817,7 +755,7 @@ Transform:
   - {fileID: 302341828334564390}
   - {fileID: 4988349426328359597}
   m_Father: {fileID: 2548486773104534780}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8614941710932879796
 GameObject:
@@ -828,7 +766,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5716436461337933996}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: JumpDirection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -847,5 +785,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2548486773104534780}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
