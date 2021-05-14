@@ -666,11 +666,11 @@ MonoBehaviour:
   speed: 1000
   jumpForce: 400
   airRotationSpeed: 5
-  canonRotationSpeed: 1
+  canonRotationSpeed: 2
   rocketJumpForce: 400
   bulletForce: 15
   maxBullet: 3
-  reloadCooldown: 1
+  reloadCooldown: 0.75
   bulletPrefab: {fileID: 7259900112626086296, guid: 8e634eeb899373b4cb5a5d9595da1afb,
     type: 3}
   playerRb: {fileID: 1641894505743413605}
