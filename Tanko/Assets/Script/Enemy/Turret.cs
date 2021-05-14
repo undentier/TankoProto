@@ -17,7 +17,6 @@ public class Turret : MonoBehaviour
     public Transform shootPoint;
     public GameObject bulletPrefab;
     public Transform target;
-    public LayerMask playerBulletLayer;
 
     [Header("FeedBack")]
     public GameObject deathParticule;
@@ -25,8 +24,14 @@ public class Turret : MonoBehaviour
 
     private float fireCoolDown;
 
+    private void Start()
+    {
+        fireCoolDown = fireRate;
+    }
+
     void Update()
     {
+        ChoseTarget();
         if (target != null)
         {
             ShootingSysteme();
@@ -65,10 +70,24 @@ public class Turret : MonoBehaviour
         actualBullet.GetComponent<Rigidbody2D>().AddForce(shootPoint.right * bulletSpeed, ForceMode2D.Impulse);
     }
 
+    void ChoseTarget()
+    {
+        foreach (GameObject player in LevelManager.instance.playerList)
+        {
+            float playerDistance = Vector2.Distance(transform.position, player.transform.position);
+            float minDist = Mathf.Infinity;
+
+            if (playerDistance < minDist)
+            {
+                minDist = playerDistance;
+                target = player.transform;
+            }
+        }
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == playerBulletLayer)
+        if (collision.gameObject.layer == 10) // PlayerBullet layer = 10
         {
             Damage(1);
         }
