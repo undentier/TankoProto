@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4874935355207062845}
   - component: {fileID: 4874935355207062844}
+  - component: {fileID: 7791402500892649935}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Untagged
@@ -44,15 +45,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7c6a63e499b9b6409dff8a7f0ee124a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 0
-  fireRate: 0
+  bulletSpeed: 10
+  fireRate: 3
   health: 0
   rotationSpeed: 7
-  shotingDistance: 5
+  shotingDistance: 8
   partToRotate: {fileID: 4874935357029510259}
   shootPoint: {fileID: 4874935356814409835}
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 7259900112626086296, guid: 9cadfc1bf807d2146a25e03dfda965f9,
+    type: 3}
   target: {fileID: 0}
+  playerBulletLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  deathParticule: {fileID: 7167382248832797135, guid: aefe0bfe748453c44831156d0cbefd2f,
+    type: 3}
+--- !u!58 &7791402500892649935
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4874935355207062846}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.09727591}
+  serializedVersion: 2
+  m_Radius: 0.657387
 --- !u!1 &4874935355258501112
 GameObject:
   m_ObjectHideFlags: 0
