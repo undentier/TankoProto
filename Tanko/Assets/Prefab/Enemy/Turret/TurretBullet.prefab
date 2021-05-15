@@ -119,6 +119,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destructionParticule: {fileID: 6657397636921724958, guid: bad5c72a45db2004db1819118607229a,
     type: 3}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 3840
 --- !u!58 &7751564710342938313
 CircleCollider2D:
   m_ObjectHideFlags: 0
