@@ -84,7 +84,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   deadlyBox: {fileID: 1510324812}
-  deathParticule: {fileID: 6678986146102661003, guid: 8d483a63b374b6a4ca4459198460f446,
+  deathParticule: {fileID: 2804843645010687565, guid: 01eeef3b4f835aa499516016a10f5a2b,
     type: 3}
 --- !u!61 &3572443334934821964
 BoxCollider2D:
