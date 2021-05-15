@@ -55,6 +55,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7259900112626086296, guid: 9cadfc1bf807d2146a25e03dfda965f9,
     type: 3}
   target: {fileID: 0}
+  canShoot: 1
   deathParticule: {fileID: 7167382248832797135, guid: aefe0bfe748453c44831156d0cbefd2f,
     type: 3}
 --- !u!58 &7791402500892649935

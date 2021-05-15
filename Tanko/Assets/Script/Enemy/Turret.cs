@@ -17,6 +17,7 @@ public class Turret : MonoBehaviour
     public Transform shootPoint;
     public GameObject bulletPrefab;
     public Transform target;
+    public bool canShoot;
 
     [Header("FeedBack")]
     public GameObject deathParticule;
@@ -31,10 +32,13 @@ public class Turret : MonoBehaviour
 
     void Update()
     {
-        ChoseTarget();
-        if (target != null)
+        if (canShoot)
         {
-            ShootingSysteme();
+            ChoseTarget();
+            if (target != null)
+            {
+                ShootingSysteme();
+            }
         }
     }
 
