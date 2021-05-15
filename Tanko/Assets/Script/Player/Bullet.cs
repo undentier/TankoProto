@@ -8,8 +8,11 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        GameObject deathParticule = Instantiate(destructionParticule, transform.position, transform.rotation);
-        Destroy(deathParticule, 5f);
-        Destroy(gameObject);
+        if (collision.gameObject.layer == 8)
+        {
+            GameObject deathParticule = Instantiate(destructionParticule, transform.position, transform.rotation);
+            Destroy(deathParticule, 5f);
+            Destroy(gameObject);
+        }
     }
 }
