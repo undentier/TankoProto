@@ -27,7 +27,7 @@ public class LevelManager : MonoBehaviour
     {
         playerList.RemoveAll(list_item => list_item == null);
 
-        if (Input.GetButtonDown("Respawn"))
+        if (Input.GetButtonDown("Respawn") && playerList.Count < 1)
         {
             Respawn();
         }

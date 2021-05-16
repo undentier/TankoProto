@@ -28,6 +28,22 @@ public class End : MonoBehaviour
 
     private void Update()
     {
+        VictoryDetection();
+    }
+
+    void Victory()
+    {
+        victory = true;
+
+        for (int i = 0; i < particuleSpawnPoint.Length; i++)
+        {
+            GameObject actualParticule = Instantiate(victoryParticule, particuleSpawnPoint[i].position, particuleSpawnPoint[i].rotation);
+            Destroy(actualParticule, 5f);
+        }
+    }
+
+    void VictoryDetection()
+    {
         if (!victory)
         {
             if (playerIn)
@@ -50,17 +66,6 @@ public class End : MonoBehaviour
                 fillAmount = actualTime * fillerMultiplier;
                 filler.size = new Vector2(filler.size.x, fillAmount);
             }
-        }
-    }
-
-    void Victory()
-    {
-        victory = true;
-
-        for (int i = 0; i < particuleSpawnPoint.Length; i++)
-        {
-            GameObject actualParticule = Instantiate(victoryParticule, particuleSpawnPoint[i].position, particuleSpawnPoint[i].rotation);
-            Destroy(actualParticule, 5f);
         }
     }
 
