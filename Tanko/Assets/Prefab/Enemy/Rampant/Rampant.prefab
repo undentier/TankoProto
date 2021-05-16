@@ -79,7 +79,7 @@ MonoBehaviour:
   rampantRb: {fileID: 3572443334934821962}
   mouvementLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 768
   explosionLayer:
     serializedVersion: 2
     m_Bits: 2048

@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 10
-  fireRate: 2
+  fireRate: 1.5
   health: 0
   rotationSpeed: 7
   shotingDistance: 8

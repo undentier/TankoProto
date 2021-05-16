@@ -649,7 +649,7 @@ MonoBehaviour:
   partToRotate: {fileID: 1306856531978924677}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 257
+    m_Bits: 256
   rayDistance: 0.1
   rayStarts:
   - {fileID: 6487381308315401899}
