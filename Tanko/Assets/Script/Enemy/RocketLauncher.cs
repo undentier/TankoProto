@@ -30,6 +30,6 @@ public class RocketLauncher : MonoBehaviour
     void Fire()
     {
         GameObject actualRocket = Instantiate(rocketPrefab, shootPoint.position, shootPoint.rotation);
-        actualRocket.GetComponent<Rigidbody2D>().AddForce((Vector2.left) * rocketSpeed);
+        actualRocket.GetComponent<Rigidbody2D>().AddForce((shootPoint.up) * rocketSpeed);
     }
 }
