@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class End : MonoBehaviour
 {
+    public static End instance;
+
     [Header ("Unity Setup")]
     public SpriteRenderer filler;
     public float timeToStay;
-    public static bool victory;
+    public bool victory;
     public Transform[] particuleSpawnPoint;
 
     [Header("FeedBack")]
@@ -17,6 +19,14 @@ public class End : MonoBehaviour
     private float actualTime;
     private float fillerMultiplier;
     private float fillAmount;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
 
     private void Start()
     {

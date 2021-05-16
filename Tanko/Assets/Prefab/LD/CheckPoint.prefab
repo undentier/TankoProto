@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1700213475935709021
+--- !u!1 &305950297521278160
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,37 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1700213475935709023}
-  - component: {fileID: 1700213475935709020}
-  - component: {fileID: 1700213475935709022}
-  m_Layer: 8
-  m_Name: Ground
+  - component: {fileID: 305950297521278163}
+  - component: {fileID: 305950297521278162}
+  - component: {fileID: 305950297521278161}
+  - component: {fileID: 305950297521278164}
+  m_Layer: 0
+  m_Name: CheckPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1700213475935709023
+--- !u!4 &305950297521278163
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1700213475935709021}
+  m_GameObject: {fileID: 305950297521278160}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.61, z: 0}
-  m_LocalScale: {x: 1738.2522, y: 84.90642, z: 1}
+  m_LocalPosition: {x: 23.929, y: -2.534, z: 0}
+  m_LocalScale: {x: 0.0654054, y: 0.22365214, z: 0.09802125}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1700213475935709020
+--- !u!212 &305950297521278162
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1700213475935709021}
+  m_GameObject: {fileID: 305950297521278160}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -70,41 +71,57 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: c62a1577180af1b45924fdcad660221e, type: 3}
-  m_Color: {r: 0.23584908, g: 0.22361162, b: 0.22361162, a: 1}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 0019be218e1b1364a87da3c59a02e99e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.02, y: 0.02}
+  m_Size: {x: 24.29, y: 11.694307}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &1700213475935709022
+--- !u!114 &305950297521278161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 305950297521278160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44396c238ca6aaf4598455358bb50e40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rend: {fileID: 305950297521278162}
+  checkpointParticule: {fileID: 3018788871617981623, guid: 16b1324939a6c6f4f989cc7a9161a0ed,
+    type: 3}
+  fullSprite: {fileID: 21300000, guid: a59dffc9680d6a04aa034bb211b8bfaa, type: 3}
+--- !u!61 &305950297521278164
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1700213475935709021}
+  m_GameObject: {fileID: 305950297521278160}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: a97e5ae98ac6d9a43975f70f40fc051f, type: 2}
-  m_IsTrigger: 0
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.02, y: 0.02}
-    newSize: {x: 0.02, y: 0.02}
+    oldSize: {x: 24.330406, y: 11.690001}
+    newSize: {x: 24.29, y: 11.694307}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02}
+  m_Size: {x: 24.330406, y: 11.690001}
   m_EdgeRadius: 0

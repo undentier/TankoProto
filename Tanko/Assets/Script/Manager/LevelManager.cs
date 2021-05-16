@@ -7,9 +7,10 @@ public class LevelManager : MonoBehaviour
     public static LevelManager instance;
 
     public GameObject playerPrefab;
-    public Transform spawnPoint;
-
+    public Transform startSpawnPoint;
     public List<GameObject> playerList = new List<GameObject>();
+
+    [HideInInspector] public Transform actualSpawnpoint;
 
     private void Awake()
     {
@@ -21,6 +22,11 @@ public class LevelManager : MonoBehaviour
         {
             Debug.Log("Multiple LevelManager in scene");
         }
+    }
+
+    private void Start()
+    {
+        actualSpawnpoint = startSpawnPoint;
     }
 
     void Update()
@@ -36,7 +42,7 @@ public class LevelManager : MonoBehaviour
 
     public void Respawn()
     {
-        GameObject actualspawn = Instantiate(playerPrefab, spawnPoint.position, spawnPoint.rotation);
+        GameObject actualspawn = Instantiate(playerPrefab, actualSpawnpoint.position, actualSpawnpoint.rotation);
         playerList.Add(actualspawn);
     }
 }

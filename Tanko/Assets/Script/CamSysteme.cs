@@ -13,7 +13,10 @@ public class CamSysteme : MonoBehaviour
         {
             if (LevelManager.instance.playerList.Count > 0)
             {
-                cam.Follow = LevelManager.instance.playerList[0].transform;
+                if (LevelManager.instance.playerList[0] != null)
+                {
+                    cam.Follow = LevelManager.instance.playerList[0].transform;
+                }
             }
         }
     }

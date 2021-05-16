@@ -28,7 +28,7 @@ public class UiSysteme : MonoBehaviour
             deadMenu.SetActive(false);
         }
         
-        if (End.victory && !lockVictory)
+        if (End.instance.victory && !lockVictory)
         {
             lockVictory = true;
             StartCoroutine(VictoryCoolDown());

@@ -76,15 +76,21 @@ public class Turret : MonoBehaviour
 
     void ChoseTarget()
     {
-        foreach (GameObject player in LevelManager.instance.playerList)
+        if (target == null)
         {
-            float playerDistance = Vector2.Distance(transform.position, player.transform.position);
-            float minDist = Mathf.Infinity;
-
-            if (playerDistance < minDist)
+            foreach (GameObject player in LevelManager.instance.playerList)
             {
-                minDist = playerDistance;
-                target = player.transform;
+                if (player != null)
+                {
+                    float playerDistance = Vector2.Distance(transform.position, player.transform.position);
+                    float minDist = Mathf.Infinity;
+
+                    if (playerDistance < minDist)
+                    {
+                        minDist = playerDistance;
+                        target = player.transform;
+                    }
+                }
             }
         }
     }
