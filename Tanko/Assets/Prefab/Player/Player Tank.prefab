@@ -635,7 +635,7 @@ MonoBehaviour:
   speed: 1000
   jumpForce: 400
   airRotationSpeed: 5
-  canonRotationSpeed: 2
+  canonRotationSpeed: 4
   rocketJumpForce: 400
   bulletForce: 15
   maxBullet: 3

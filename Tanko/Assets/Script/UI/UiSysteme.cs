@@ -8,6 +8,7 @@ public class UiSysteme : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject deadMenu;
     public GameObject victoryMenu;
+    public string nameNextLevel;
     public bool gameIsPause;
 
     private bool lockVictory;
@@ -73,5 +74,11 @@ public class UiSysteme : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         ActiveVictoryMenu();
+    }
+
+    public void LoadNextLevel()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(nameNextLevel);
     }
 }
