@@ -16,6 +16,7 @@ public class Rampant : MonoBehaviour
     public LayerMask mouvementLayer;
     public LayerMask explosionLayer;
     public BoxCollider2D deadlyBox;
+    public bool canMove;
 
     [Header("FeedBack")]
     public GameObject deathParticule;
@@ -31,7 +32,11 @@ public class Rampant : MonoBehaviour
     void Update()
     {
         HitDetection();
-        Mouvement();
+
+        if (canMove)
+        {
+            Mouvement();
+        }
     }
 
     void Mouvement()
